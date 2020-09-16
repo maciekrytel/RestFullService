@@ -2,6 +2,8 @@ package com.example.restService.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Entity
 //@Table(name = "notes")
@@ -19,15 +21,15 @@ public class Note {
     private String content;
 
 //    @Column(name="created_at", nullable=false)
-    private LocalDate created;
+    private LocalDateTime created;
 
 //    @Column(name="motified_at", nullable=false)
-    private LocalDate motified;
+    private LocalDateTime motified;
 
     public Note(){
     }
 
-    public Note(Long id, String title, String content, LocalDate created, LocalDate motified) {
+    public Note(Long id, String title, String content, LocalDateTime created, LocalDateTime motified) {
         this.id = id;
         this.title = title;
         this.content = content;
@@ -35,7 +37,7 @@ public class Note {
         this.motified = motified;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -59,19 +61,19 @@ public class Note {
         this.content = content;
     }
 
-    public LocalDate getCreated() {
+    public LocalDateTime getCreated() {
         return created;
     }
 
-    public void setCreated(LocalDate created) {
+    public void setCreated(LocalDateTime created) {
         this.created = created;
     }
 
-    public LocalDate getMotified() {
+    public LocalDateTime getMotified() {
         return motified;
     }
 
-    public void setMotified(LocalDate motified) {
+    public void setMotified(LocalDateTime motified) {
         this.motified = motified;
     }
 }

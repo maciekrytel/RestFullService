@@ -5,6 +5,7 @@ import com.example.restService.managment.NoteManagment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 @RestController
@@ -30,11 +31,15 @@ public class Controller {
 
     @PostMapping
     public Note addNote(@RequestBody Note note){
+        note.setMotified(LocalDateTime.now());
+        note.setCreated(LocalDateTime.now());
         return notes.addData(note);
     }
 
     @PutMapping
     public Note modifyNote(@RequestBody Note note){
+        note.setCreated(notes.getSpecifiedData(note.getId()).get().getCreated());
+        note.setMotified(LocalDateTime.now());
         return notes.addData(note);
     }
 

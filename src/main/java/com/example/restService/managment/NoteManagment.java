@@ -9,6 +9,9 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 @Service
@@ -39,7 +42,7 @@ public class NoteManagment {
 
     @EventListener(ApplicationReadyEvent.class)
     public void databaseFill(){
-        addData(new Note(1L, "pierwszy tutul", "to jest pierwsza zawartosc", LocalDate.of(2020, 8, 30),LocalDate.now()));
-        addData(new Note(2L, "drugi tutul", "druga zawartosc", LocalDate.of(2020, 8, 30),LocalDate.now()));
+        addData(new Note(1L, "pierwszy tutul", "to jest pierwsza zawartosc", LocalDateTime.now(),LocalDateTime.now()));
+        addData(new Note(2L, "drugi tutul", "druga zawartosc", LocalDateTime.now(),LocalDateTime.now()));
     }
 }
