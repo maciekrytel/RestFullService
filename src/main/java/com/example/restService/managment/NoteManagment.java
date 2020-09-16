@@ -1,7 +1,9 @@
 package com.example.restService.managment;
 
 import com.example.restService.model.Note;
+import com.example.restService.model.TracedNote;
 import com.example.restService.repository.NoteRepository;
+import com.example.restService.repository.TraceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
@@ -42,7 +44,7 @@ public class NoteManagment {
 
     @EventListener(ApplicationReadyEvent.class)
     public void databaseFill(){
-        addData(new Note(1L, "pierwszy tutul", "to jest pierwsza zawartosc", LocalDateTime.now(),LocalDateTime.now()));
-        addData(new Note(2L, "drugi tutul", "druga zawartosc", LocalDateTime.now(),LocalDateTime.now()));
+        addData(new Note("pierwszy tutul", "to jest pierwsza zawartosc", LocalDateTime.now(),LocalDateTime.now()));
+        addData(new Note("drugi tutul", "druga zawartosc", LocalDateTime.now(),LocalDateTime.now()));
     }
 }
