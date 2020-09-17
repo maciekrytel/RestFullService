@@ -4,14 +4,11 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-//@Table(name = "treced_notes")
 public class TracedNote {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
-
-//    @Column(name = "noteId")
     private Long noteid;
     private String title;
     private String content;

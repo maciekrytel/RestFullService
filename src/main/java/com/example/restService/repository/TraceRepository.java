@@ -1,7 +1,6 @@
 package com.example.restService.repository;
 
 import com.example.restService.model.TracedNote;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

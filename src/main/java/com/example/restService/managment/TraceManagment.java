@@ -33,10 +33,4 @@ public class TraceManagment {
         tracedNote.setNoteid(note.getId());
         return traceRepository.save(tracedNote);
     }
-
-//    @EventListener(ApplicationReadyEvent.class)
-//    public void databaseFill(){
-//        addData(new TracedNote("pierwszy tutul", "to jest pierwsza zawartosc", LocalDateTime.now(),LocalDateTime.now(), 1L));
-//        addData(new TracedNote("drugi tutul", "druga zawartosc", LocalDateTime.now(),LocalDateTime.now()), 2L);
-//    }
 }

@@ -1,19 +1,13 @@
 package com.example.restService.managment;
 
 import com.example.restService.model.Note;
-import com.example.restService.model.TracedNote;
 import com.example.restService.repository.NoteRepository;
-import com.example.restService.repository.TraceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 @Service
@@ -42,9 +36,9 @@ public class NoteManagment {
         noteRepository.deleteById(id);
     }
 
-    @EventListener(ApplicationReadyEvent.class)
-    public void databaseFill(){
-        addData(new Note("pierwszy tutul", "to jest pierwsza zawartosc", LocalDateTime.now(),LocalDateTime.now()));
-        addData(new Note("drugi tutul", "druga zawartosc", LocalDateTime.now(),LocalDateTime.now()));
-    }
+//    @EventListener(ApplicationReadyEvent.class)
+////    public void databaseFill(){
+////        addData(new Note("pierwszy tutul", "to jest pierwsza zawartosc", LocalDateTime.now(),LocalDateTime.now()));
+////        addData(new Note("drugi tutul", "druga zawartosc", LocalDateTime.now(),LocalDateTime.now()));
+////    }
 }

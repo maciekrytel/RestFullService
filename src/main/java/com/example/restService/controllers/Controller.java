@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
-import java.util.Iterator;
 import java.util.Optional;
 
 @RestController
@@ -56,12 +55,11 @@ public class Controller {
         return notes.addData(note);
     }
 
-//    @PostMapping
     public TracedNote addTrace(Note note){
         return traces.addData(note);
     }
 
-    @PutMapping("/modify/{index}")
+    @PutMapping("/{index}")
     public Note modifyNote(@PathVariable Long index, @RequestBody Note note){
         note.setId(index);
         note.setCreated(notes.getSpecifiedData(note.getId()).get().getCreated());
@@ -70,13 +68,9 @@ public class Controller {
         return notes.addData(note);
     }
 
-    @DeleteMapping("/delete/{index}")
+    @DeleteMapping("/{index}")
     public void deleteNote(@PathVariable Long index){
         notes.deleteData(index);
     }
 
-//    @RequestMapping(method = RequestMethod.GET, path = "/hello")
-//    public String Welcome() {
-//        return "Hi, I'm testing now";
-//    }
 }
