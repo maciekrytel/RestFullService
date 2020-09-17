@@ -35,10 +35,4 @@ public class NoteManagment {
     public void deleteData(Long id){
         noteRepository.deleteById(id);
     }
-
-//    @EventListener(ApplicationReadyEvent.class)
-////    public void databaseFill(){
-////        addData(new Note("pierwszy tutul", "to jest pierwsza zawartosc", LocalDateTime.now(),LocalDateTime.now()));
-////        addData(new Note("drugi tutul", "druga zawartosc", LocalDateTime.now(),LocalDateTime.now()));
-////    }
 }
