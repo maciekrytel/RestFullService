@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
+import java.util.Iterator;
 import java.util.Optional;
 
 @RestController
@@ -30,7 +31,6 @@ public class Controller {
 
     @GetMapping("/{index}")
     public Optional<Note> getById(@PathVariable Long index){
-        System.out.println(notes.getSpecifiedData(index).get().getId());
         return notes.getSpecifiedData(index);
     }
 
@@ -39,12 +39,20 @@ public class Controller {
         return traces.getAllData();
     }
 
+    @GetMapping("/backup/{index}")
+    public Iterable<TracedNote> getTraceById(@PathVariable Long index){
+        return traces.getSpecifiedData(index);
+    }
+
     @PostMapping
-    public Note addNote(@RequestBody Note note){
-        System.out.println(note.getId());
+    public void addData(@RequestBody Note note){
         note.setMotified(LocalDateTime.now());
         note.setCreated(LocalDateTime.now());
+        addNote(note);
         addTrace(note);
+    }
+
+    public Note addNote(Note note){
         return notes.addData(note);
     }
 

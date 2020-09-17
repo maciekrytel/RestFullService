@@ -10,6 +10,9 @@ public class TracedNote {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
+
+//    @Column(name = "noteId")
+    private Long noteid;
     private String title;
     private String content;
     private LocalDateTime created;
@@ -18,11 +21,12 @@ public class TracedNote {
     public TracedNote(){
     }
 
-    public TracedNote(String title, String content, LocalDateTime created, LocalDateTime motified) {
+    public TracedNote(String title, String content, LocalDateTime created, LocalDateTime motified, Long noteid) {
         this.title = title;
         this.content = content;
         this.created = created;
         this.motified = motified;
+        this.noteid = noteid;
     }
 
     public Long getId() {
@@ -31,6 +35,15 @@ public class TracedNote {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    @Column(name="note_id", nullable=false)
+    public Long getNoteid() {
+        return noteid;
+    }
+
+    public void setNoteid(Long noteid) {
+        this.noteid = noteid;
     }
 
     public String getTitle() {
