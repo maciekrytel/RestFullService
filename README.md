@@ -14,13 +14,13 @@ First clone repository using Git. Then install all dependencies, build and run p
 
 ## **Steps how to run scripts that will setup database for the project**
 
-What you have to do, is just to install H2 Database. Then access database with running h2 desktop app or use this url: 
+What you have to do is just to install H2 Database. Then access database with running h2 desktop app or use this url: 
 
 `http://localhost:8080/h2`
 
 ## **Example usages**
 
-First of All, I recommend to use Postman to execute curl commands.
+First of all I recommend to use Postman to execute curl commands. List of API endpoints below.
 
 #### **API Endpoints:**
 ##### GET all Notes
