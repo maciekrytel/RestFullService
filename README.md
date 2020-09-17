@@ -22,7 +22,7 @@ What you have to do, is just to install H2 Database. Then access database with r
 
 First of All, I recommend to use Postman to execute curl commands.
 
-##### **API Endpoints:**
+#### **API Endpoints:**
 ##### GET all Notes
 `http://localhost:8080/api/model/all`
 
