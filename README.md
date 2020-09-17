@@ -22,27 +22,27 @@ What you have to do, is just to install H2 Database. Then access database with r
 
 First of All, I recommend to use Postman to execute curl commands.
 
-### **API Endpoints:**
-### GET all Notes
+##### **API Endpoints:**
+##### GET all Notes
 `http://localhost:8080/api/model/all`
 
-### GET specified Note 
+##### GET specified Note 
 `http://localhost:8080/api/model/{id}`
 
-### POST Note 
+##### POST Note 
 `http://localhost:8080/api/model`
 
-### PUT Note 
+##### PUT Note 
 `http://localhost:8080/api/model/{id}` with the following parameters
 `{ "title": "Modified title", "content": "modified content" }`
 
-### DELETE Note 
+##### DELETE Note 
 `http://localhost:8080/api/model/{id}`
 
-### GET all versioned Notes 
+##### GET all versioned Notes 
 `http://localhost:8080/api/model/backup/all`
 
-### GET all versions of particular note
+##### GET all versions of particular note
 `http://localhost:8080/api/model/backup/{id}`
 
 
